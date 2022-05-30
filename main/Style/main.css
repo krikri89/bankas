@@ -7,61 +7,84 @@ body * {
 }
 
 body {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 :root {
-  --first: rgb(185, 208, 192);
+  --first: rgb(161, 179, 166);
   --gradient: linear-gradient(
     266deg,
-    rgba(0, 36, 36, 1) 8%,
-    rgba(101, 142, 151, 1) 69%
+    rgba(1, 49, 46, 1) 21%,
+    rgba(68, 159, 140, 1) 78%
   );
-  --shadow: rgb(138, 138, 203);
+  --shadow: rgb(85, 85, 108);
   --white: rgb(230, 236, 233);
+  --green: rgba(1, 49, 46, 1);
+  --light: rgba(68, 159, 140, 1);
 }
 header {
   position: relative;
   background: var(--gradient);
-  height: 60px;
-  box-shadow: 2px 2px 5px rgb(138, 138, 203);
+  height: 4rem;
+  box-shadow: 0px 7px 15px var(--shadow);
 }
 .header h1 {
   position: absolute;
   left: 2%;
-  top: 10%;
+  top: 20%;
 }
 .navigation {
   position: absolute;
   display: inline-block;
   height: 40px;
   right: 20px;
-  top: 5px;
-  padding: 15px;
+  top: 33%;
 }
 .navigation a {
   text-decoration: none;
   color: var(--white);
   font-size: 20px;
+  padding: 5px;
 }
 .navigation a:hover {
-  text-decoration: underline var(--shadow);
+  text-decoration: overline var(--white);
   line-height: 25px;
-  padding: 5px;
-  font-size: 20px;
+  padding: 10px;
+  transition: 30ms ease;
 }
 body {
   background-color: var(--first);
 }
 .form {
-  display: grid;
-  margin: 20%;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border: 5px solid var(--green);
+  /* background-color: var(--light); */
+}
+label {
+  display: block;
+  padding: 1rem 0 0.5rem;
   font-size: 20px;
-  line-height: 35px;
+}
+input {
+  display: block;
+  width: 100%;
+  border: 2px solid var(--shadow);
+  font-size: 20px;
+  border-radius: 5px;
 }
 .btn {
-  padding: 10px;
+  padding: 1.2em;
   border-radius: 25px;
-  width: 140px;
   border: none;
+  background-color: var(--green);
+  color: var(--white);
+  margin: 1em 0;
+  width: auto;
+  text-transform: uppercase;
+}
+.btn:hover {
+  background-color: var(--shadow);
+  cursor: pointer;
 }
