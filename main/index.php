@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,11 +17,9 @@
         <nav class="navigation">
             <a href="http://localhost/vienaragiai/bankas/bankas/main/">Home</a>
             <a href="http://localhost/vienaragiai/bankas/bankas/main/Create_an_account.php">New account</a>
-            <a href="http://localhost/vienaragiai/bankas/bankas/main/add_new.php">Cash in</a>
-            <a href="http://localhost/vienaragiai/bankas/bankas/main/Cash_out.php">Cash out</a>
         </nav>
     </header>
-    
+
     <table>
         <tr>
             <th>Name</th>
@@ -28,30 +27,28 @@
             <th>Personal Number</th>
             <th>Account number</th>
             <th>Amount</th>
+            <th>Delete</th>
+            <th>Add </th>
+            <th>Take out</th>
         </tr>
         <?php
-        $json_data = file_get_contents(__DIR__."/data/duomenys.json");
+        $json_data = file_get_contents(__DIR__ . "/data/duomenys.json");
         $duomenys = json_decode($json_data, TRUE);
-        if(count($duomenys)!=0){
-            foreach($duomenys as $item){
-                ?>
-<tr>
-    <td><?php echo $item['name']?></td>
-    <td><?php echo $item['surname']?></td>
-    <td><?php echo $item['personalid']?></td>
-    <td><?php echo $item['accountid']?></td>
-    <td><?php echo $item['amount']?></td>
-    <td>
-        <select name="action" id="action">
-            <option value="">Select action</option> 
-            <option value="Delete">Delete</option> 
-            <option value="Add">Cash in</option> 
-            <option value="cashout">Cash out</option> 
-        </select>
-        </td>
-</tr>
+        if (count($duomenys) != 0) {
+            foreach ($duomenys as $item) {
+        ?>
+                <tr>
+                    <td><?php echo $item['name'] ?></td>
+                    <td><?php echo $item['surname'] ?></td>
+                    <td><?php echo $item['personalid'] ?></td>
+                    <td><?php echo $item['accountid'] ?></td>
+                    <td><?php echo $item['amount'] ?></td>
+                    <td><button>Delete</button></td>
+                    <td><a href="http://localhost/vienaragiai/bankas/bankas/main/add_new.php">Cash in</a></td>
+                    <td><a href="http://localhost/vienaragiai/bankas/bankas/main/Cash_out.php">Cash out</a></td>
+                </tr>
 
-                <?php
+        <?php
             }
         }
 
@@ -59,9 +56,10 @@
 
 
     </table>
-   
+
 
 
 
 </body>
+
 </html>

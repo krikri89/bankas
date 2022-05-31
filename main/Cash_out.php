@@ -13,8 +13,6 @@
         <nav class="navigation">
             <a href="http://localhost/vienaragiai/bankas/bankas/main/">Home</a>
             <a href="http://localhost/vienaragiai/bankas/bankas/main/Create_an_account.php">New account</a>
-            <a href="http://localhost/vienaragiai/bankas/bankas/main/add_new.php">Cash in</a>
-            <a href="http://localhost/vienaragiai/bankas/bankas/main/Cash_out.php">Cash out</a>
         </nav>
     </header>
     <button>out</button>

@@ -48,8 +48,8 @@ header {
 }
 .navigation a:hover {
   text-decoration: overline var(--white);
-  line-height: 25px;
-  padding: 10px;
+  /* line-height: 25px; */
+  /* padding: 10px; */
   transition: 30ms ease;
 }
 body {
@@ -60,7 +60,6 @@ body {
   margin: 2rem auto;
   padding: 2rem;
   border: 5px solid var(--green);
-  /* background-color: var(--light); */
 }
 label {
   display: block;
