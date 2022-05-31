@@ -20,37 +20,46 @@
             <a href="http://localhost/vienaragiai/bankas/bankas/main/Cash_out.php">Cash out</a>
         </nav>
     </header>
-       <!-- <?php
-    if ($_GET['page']== 2){
+    
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Personal Number</th>
+            <th>Account number</th>
+            <th>Amount</th>
+        </tr>
+        <?php
+        $json_data = file_get_contents(__DIR__."/data/duomenys.json");
+        $duomenys = json_decode($json_data, TRUE);
+        if(count($duomenys)!=0){
+            foreach($duomenys as $item){
+                ?>
+<tr>
+    <td><?php echo $item['name']?></td>
+    <td><?php echo $item['surname']?></td>
+    <td><?php echo $item['personalid']?></td>
+    <td><?php echo $item['accountid']?></td>
+    <td><?php echo $item['amount']?></td>
+    <td>
+        <select name="action" id="action">
+            <option value="">Select action</option> 
+            <option value="Delete">Delete</option> 
+            <option value="Add">Cash in</option> 
+            <option value="cashout">Cash out</option> 
+        </select>
+        </td>
+</tr>
+
+                <?php
+            }
+        }
 
         ?>
-    <h2>New account</h2>
-    <?php
-}
-?>
-    <?php
-    if ($_GET['page']== 3){
 
-        ?>
-    <h2>Cash in</h2>
-    <?php
-}
-?>
-    <?php
-    if ($_GET['page']== 4){
 
-        ?>
-    <h2>Cash out</h2>
-    <?php
-}
-?>
-    <?php
-    if ($_GET['page']== 1){
-
-        ?>
-    <?php
-}
-?> -->
+    </table>
+   
 
 
 

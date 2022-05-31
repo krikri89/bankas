@@ -1,22 +1,12 @@
 <?php 
-if(isset($_POST['submit'])){
-    $new_data = array(
-        "name" => $_POST['name'],
-        "surname"=>$_POST['surname'],
-        "personalid"=>$_POST['personal ID'],
-        "accountid"=>$_POST['accountID'],
-        "amount"=>$_POST['amount'],
-    );
-    if(filesize("duomenys.json") == 0){
-        $first_record =array($new_account);
-        $data_to_save = $first_record;
-    } else {
-        $old_records = json_decode(file_get_contents("duomenys.json"));
-        $data_to_save = $old_records;
-    }
-    if(!file_put_contents("duomenys.json", json_encode($data_to_save, JSON_PRETTY_PRINT),LOCK_EX)){
-        $error = "Error, please try again";
-    } else {
-        $success = "New account created";
-    }
+if($_SERVER['REQUEST_METHOD']=== 'POST'){
+    print_r ($_POST);
+        if(!file_exists(__DIR__."/data/duomenys.json")){
+            file_put_contents(__DIR__."/data/duomenys.json", json_encode([]));
+        }
+        $allAccounts = json_decode(file_get_contents(__DIR__."/data/duomenys.json"),TRUE);
+  file_put_contents(__DIR__."/data/duomenys.json", json_encode([...$allAccounts, $_POST
+
+  ]));
+  
 }

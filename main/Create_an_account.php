@@ -1,9 +1,6 @@
 <?php
-//  required("script.php");
-if (isset($_GET['main'])){
-    header ('location: http://localhost/vienaragiai/bankas/bankas/main/Create_an_account?page=2');
-    die;
-};
+ require("script.php");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +33,7 @@ if (isset($_GET['main'])){
     <label>Account number</label>
     <input type="text" name="accountid">
     <label >Amount</label>
-    <input type="number" >
+    <input type="number" name="amount">
     <button class="btn" type="submit">Submit</button>
     <p class="error"><?php echo @$error ?></p>
     <p class="success"><?php echo @$success ?></p>
