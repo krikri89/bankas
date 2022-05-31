@@ -38,12 +38,13 @@
             foreach ($duomenys as $item) {
         ?>
                 <tr>
-                    <td><?php echo $item['name'] ?></td>
                     <td><?php echo $item['surname'] ?></td>
+                    <td><?php echo $item['name'] ?></td>
+                    <td><?php echo $item['ID'] ?></td>
                     <td><?php echo $item['personalid'] ?></td>
                     <td><?php echo $item['accountid'] ?></td>
                     <td><?php echo $item['amount'] ?></td>
-                    <td><button>Delete</button></td>
+                    <td><button id="delete">Delete</button></td>
                     <td><a href="http://localhost/vienaragiai/bankas/bankas/main/add_new.php">Cash in</a></td>
                     <td><a href="http://localhost/vienaragiai/bankas/bankas/main/Cash_out.php">Cash out</a></td>
                 </tr>
