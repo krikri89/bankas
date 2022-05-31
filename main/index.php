@@ -24,8 +24,9 @@
         <tr>
             <th>Surname</th>
             <th>Name</th>
+            <th>Client number</th>
             <th>Personal Number</th>
-            <th>Account number</th>
+            <th>Account Number</th>
             <th>Amount</th>
             <th>Delete</th>
             <th>Add </th>
@@ -43,7 +44,7 @@
                     <td><?php echo $item['ID'] ?></td>
                     <td><?php echo $item['personalid'] ?></td>
                     <td><?php echo $item['accountid'] ?></td>
-                    <td><?php echo $item['amount'] ?></td>
+                    <td><?php echo $item['amount'] ?> $</td>
                     <td><button id="delete">Delete</button></td>
                     <td><a href="http://localhost/vienaragiai/bankas/bankas/main/add_new.php">Cash in</a></td>
                     <td><a href="http://localhost/vienaragiai/bankas/bankas/main/Cash_out.php">Cash out</a></td>

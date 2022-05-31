@@ -30,10 +30,9 @@ require("script.php");
         <input type="text" name="surname">
         <label>Personal number</label>
         <input type="text" name="personalid">
-        <!-- <label>Account number</label> -->
-        <!-- <input type="text" name="accountid"> -->
-        <!-- <label>Amount</label> -->
-        <!-- <input type="number" name="amount"> -->
+        <label>Account number</label>
+        <div><?php echo file_get_contents(__DIR__ . "/data/accountNr.json") ?></div>
+
         <button class="btn" type="submit">Submit</button>
         <p class="error"><?php echo @$error ?></p>
         <p class="success"><?php echo @$success ?></p>
