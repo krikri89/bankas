@@ -43,7 +43,7 @@
                     <td><?php echo $item['name'] ?></td>
                     <td><?php echo $item['ID'] ?></td>
                     <td><?php echo $item['personalid'] ?></td>
-                    <td><?php echo $item['accountid'] ?></td>
+                    <td>LT12 1000 0111 0100 <?php echo $item['accountid'] ?></td>
                     <td><?php echo $item['amount'] ?> $</td>
                     <td><button id="delete">Delete</button></td>
                     <td><a href="http://localhost/vienaragiai/bankas/bankas/main/add_new.php">Cash in</a></td>

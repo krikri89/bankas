@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $client = json_decode(file_get_contents(__DIR__ . "/data/clientNr.json"), TRUE);
     $client++;
     if (!file_exists((__DIR__ . "/data/accountNr.json"))) {
-        file_put_contents(__DIR__ . "/data/accountNr.json", json_encode(rand(1, 322)));
+        file_put_contents(__DIR__ . "/data/accountNr.json", json_encode(rand(1000, 9999)));
     }
     $accountNr = json_decode(file_get_contents(__DIR__ . "/data/accountNr.json"), TRUE);
     $accountNr++;

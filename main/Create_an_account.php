@@ -31,7 +31,7 @@ require("script.php");
         <label>Personal number</label>
         <input type="text" name="personalid">
         <label>Account number</label>
-        <div><?php echo file_get_contents(__DIR__ . "/data/accountNr.json") ?></div>
+        <div>LT12 1000 0111 0100 <?php echo file_get_contents(__DIR__ . "/data/accountNr.json") ?></div>
 
         <button class="btn" type="submit">Submit</button>
         <p class="error"><?php echo @$error ?></p>
