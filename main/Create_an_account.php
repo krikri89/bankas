@@ -1,9 +1,10 @@
 <?php
- require("script.php");
+require("script.php");
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,6 +13,7 @@
 
     <title>Document</title>
 </head>
+
 <body>
     <header class="header">
         <h1>Yo|a bank</h1>
@@ -21,22 +23,23 @@
         </nav>
     </header>
 
-<form class="form" action="" method="post">
-    <label>Name</label>
-    <input type="text" name="name">
-    <label>Surname</label>
-    <input type="text" name="surname">
-    <label>Personal number</label>
-    <input type="text" name="personalid">
-    <label>Account number</label>
-    <input type="text" name="accountid">
-    <label >Amount</label>
-    <input type="number" name="amount">
-    <button class="btn" type="submit">Submit</button>
-    <p class="error"><?php echo @$error ?></p>
-    <p class="success"><?php echo @$success ?></p>
-</form> 
+    <form class="form" action="" method="POST">
+        <label>Name</label>
+        <input type="text" name="name">
+        <label>Surname</label>
+        <input type="text" name="surname">
+        <label>Personal number</label>
+        <input type="text" name="personalid">
+        <!-- <label>Account number</label> -->
+        <!-- <input type="text" name="accountid"> -->
+        <!-- <label>Amount</label> -->
+        <!-- <input type="number" name="amount"> -->
+        <button class="btn" type="submit">Submit</button>
+        <p class="error"><?php echo @$error ?></p>
+        <p class="success"><?php echo @$success ?></p>
+    </form>
 
 
 </body>
+
 </html>
