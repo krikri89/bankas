@@ -23,15 +23,19 @@ require("script.php");
         </nav>
     </header>
 
-    <form class="form" action="" method="POST">
+    <form class="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
         <label>Name</label>
         <input type="text" name="name">
+        <span class="error"> <?php echo $nameErr; ?></span>
+        <br><br>
         <label>Surname</label>
         <input type="text" name="surname">
+        <span class="error"> <?php echo $surnameErr; ?></span>
+        <br><br>
         <label>Personal number</label>
         <input type="text" name="personalid">
         <label>Account number</label>
-        <div>LT12 1000 0111 0100 <?php echo file_get_contents(__DIR__ . "/data/accountNr.json") ?></div>
+        <div>LT<?php echo file_get_contents(__DIR__ . "/data/accountNr.json") ?></div>
 
         <button class="btn" type="submit">Submit</button>
         <p class="error"><?php echo @$error ?></p>

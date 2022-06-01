@@ -7,10 +7,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $client = json_decode(file_get_contents(__DIR__ . "/data/clientNr.json"), TRUE);
     $client++;
     if (!file_exists((__DIR__ . "/data/accountNr.json"))) {
-        file_put_contents(__DIR__ . "/data/accountNr.json", json_encode(rand(1000, 9999)));
+        file_put_contents(__DIR__ . "/data/accountNr.json", json_encode(mt_rand(1000, 99999)) . (mt_rand(1000, 99999)) . (mt_rand(1000, 99999)));
     }
     $accountNr = json_decode(file_get_contents(__DIR__ . "/data/accountNr.json"), TRUE);
-    $accountNr++;
+    $accountNr += rand(100, 9999);
 
     if (!file_exists(__DIR__ . "/data/duomenys.json")) {
         file_put_contents(__DIR__ . "/data/duomenys.json", json_encode([]));

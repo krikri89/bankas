@@ -1,24 +1,28 @@
 <?php
-$error = "";
-$success = "";
+$nameErr = $surnameErr = "";
+$name = $surname = "";
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        if (empty($_POST['name'])) {
-                $error = "Enter a valid name";
-        } else {
-                $success = $_POST['name'];
-                if (preg_match("/^[a-zA-Z-']*$/", $name)) {
-                        $error = 'Only letters allowed';
-                }
-        }
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $name = test_input($_POST["name"]);
+        $surname = test_input($_POST["surname"]);
+   
 }
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        if (empty($_POST['surname'])) {
-                $error = "Enter a valid surname";
-        } else {
-                $success = $_POST['surname'];
-                if (preg_match("/^[a-zA-Z-']*$/", $surname)) {
-                        $error = 'Only letters allowed';
-                }
-        }
+
+function test_input($data)
+{
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+}
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (empty($_POST["name"])) {
+    $nameErr = "Name is required";
+  } else {
+    $name = test_input($_POST["name"]);
+    // check if name only contains letters and whitespace
+    if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
+      $nameErr = "Only letters and white space allowed";
+    }
+  }
 }
