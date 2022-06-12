@@ -26,11 +26,9 @@ require("script.php");
     <form class="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
         <label>Name</label>
         <input type="text" name="name">
-        <span class="error"> <?php echo $nameErr; ?></span>
         <br><br>
         <label>Surname</label>
         <input type="text" name="surname">
-        <span class="error"> <?php echo $surnameErr; ?></span>
         <br><br>
         <label>Personal number</label>
         <input type="text" name="personalid">
@@ -38,8 +36,6 @@ require("script.php");
         <div>LT<?php echo file_get_contents(__DIR__ . "/data/accountNr.json") ?></div>
 
         <button class="btn" type="submit">Submit</button>
-        <p class="error"><?php echo @$error ?></p>
-        <p class="success"><?php echo @$success ?></p>
     </form>
 
 
